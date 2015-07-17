@@ -1,6 +1,6 @@
-(defproject com.stuartsierra/component "0.2.4-SNAPSHOT"
-  :description "Managed lifecycle of stateful objects"
-  :url "https://github.com/stuartsierra/component"
+(defproject com.emidln/destructured-component "0.3.0"
+  :description "Managed lifecycle of stateful objects - emidln's fork"
+  :url "https://github.com/stuartsierra/destructured-component"
   :license {:name "The MIT License"
             :url "http://opensource.org/licenses/MIT"}
   :min-lein-version "2.1.3"  ; added :global-vars

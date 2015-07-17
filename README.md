@@ -1,6 +1,6 @@
-# component
+# destructured-component
 
-'Component' is a tiny Clojure framework for managing the lifecycle of
+'Destructured Component' is a tiny Clojure framework for managing the lifecycle of
 software components which have runtime state.
 
 This is primarily a design pattern with a few helper functions. It can
@@ -9,30 +9,33 @@ structures.
 
 See the [video from Clojure/West 2014](https://www.youtube.com/watch?v=13cmHf_kt-Q) (YouTube, 40 minutes)
 
+This is a fork from https://github.com/stuartsierra/component to add destructuring based on a patch that was
+not accepted mainline. I use it and maintain it, YMMV.
+
 
 ## Releases and Dependency Information
 
 * I publish releases to [Clojars]
 
-* Latest stable release is [0.2.3](https://github.com/stuartsierra/component/tree/component-0.2.3)
+* Latest stable release is [0.3.0](https://github.com/emidln/destructured-component/tree/destructured-component-0.3.0)
 
-* [All releases](https://clojars.org/com.stuartsierra/component)
+* [All releases](https://clojars.org/com.emidln/destructured-component)
 
 [Leiningen] dependency information:
 
-    [com.stuartsierra/component "0.2.3"]
+    [com.emidln/component "0.3.0"]
 
 [Maven] dependency information:
 
     <dependency>
-      <groupId>com.stuartsierra</groupId>
+      <groupId>com.emidln</groupId>
       <artifactId>component</artifactId>
-      <version>0.2.3</version>
+      <version>0.3.0</version>
     </dependency>
 
 [Gradle] dependency information:
 
-    compile "com.stuartsierra:component:0.2.3"
+    compile "com.emidln:component:0.3.0"
 
 [Clojars]: http://clojars.org/
 [Leiningen]: http://leiningen.org/
@@ -46,7 +49,7 @@ See the [video from Clojure/West 2014](https://www.youtube.com/watch?v=13cmHf_kt
 I have successfully tested 'Component' with Clojure versions
 1.4.0, 1.5.1, and 1.6.0.
 
-'Component' uses my [dependency] library.
+'Component' uses stuartsierra's [dependency] library.
 
 [dependency]: https://github.com/stuartsierra/dependency
 
@@ -63,8 +66,8 @@ versions, e.g. 0.3.0 and 0.4.0.
 
 ## Discussion
 
-Please post questions on the [Clojure Mailing List](https://groups.google.com/forum/#!forum/clojure)
-
+Please post questions on the github issues list or email me at 
+emidln@gmail.com. Please don't bother the original author about my bugs.
 
 
 ## Introduction
@@ -632,8 +635,12 @@ doing just the dependency injection part of 'component' without
 
 ## Change Log
 
-* Version 0.2.4-SNAPSHOT (in development)
+* Version 0.3.1-SNAPSHOT (in development)
   * Current Git `master` branch
+* Version [0.3.0] released on July 17, 2015. 
+  * Forked from stuartsierra/component
+  * Added dependency destructuring to `com.stuartsierra.component/using`. 
+  * Make `using` a macro: breaking change (no longer composable, use `using*`).
 * Version [0.2.3] released on March 3, 2015
   * More-specific error message when a component returns `nil` from
     `start` or `stop`: see [commit fb891500]
@@ -662,6 +669,7 @@ doing just the dependency injection part of 'component' without
   * `stop-system` now assoc's dependencies just like `start-system`
 * Version [0.1.0] released on October 28, 2013
 
+[0.3.0]: https://github.com/emidln/component/tree/destructured-component-0.3.0
 [0.2.3]: https://github.com/stuartsierra/component/tree/component-0.2.3
 [0.2.2]: https://github.com/stuartsierra/component/tree/component-0.2.2
 [0.2.1]: https://github.com/stuartsierra/component/tree/component-0.2.1
@@ -677,6 +685,7 @@ doing just the dependency injection part of 'component' without
 The MIT License (MIT)
 
 Copyright © 2013 Stuart Sierra
+Copyright © 2015 Brandon Adams
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
